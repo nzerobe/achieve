@@ -1,0 +1,34 @@
+<%= form_with(model: @robs, local: true) do |form| %>
+  <% if @robs.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @robs.errors.count %>errors occurred.</h2>
+      <ul>
+
+      <% @robs.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="blog_title">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div class="blog_title">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <%= form.submit %>
+<% end %>
+
+<div class="field">
+  <%= form.label :image %>
+  <%= form.file_field :image, id: :feed_image %>
+  <%= form.hidden_field :image_cache %>
+</div>
+<%= form.label :image %>
+<%= form.file_field :image, id: :feed_image %>
+<%= form.hidden_field :image_cache %>
+
+<%= link_to "Return to List of robs screen", robs_path %>

@@ -1,0 +1,20 @@
+<%= form_with(model: @user, local: true) do |form| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @user.errors.count %>errors occurred.</h2>
+      <ul>
+
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form_with(model: @user, local: true) do |f| %>  
+<div class="field">
+  <%= f.label :Profile image %>
+  <%= f.file_field :image, id: :feed_image %>
+  <%= f.hidden_field :image_cache %>
+</div>
+
+<% end %>

@@ -1,0 +1,40 @@
+
+  
+
+<div class="container">
+    <table>
+    <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <% @robs.each do |rob| %>
+  <tr>
+    <td><%= rob.title %></td>
+    <td><%= rob.content %></td>
+    <td><%= link_to 'Check the details', rob_path(rob.id) %></td>
+     <% if current_user.id == rob.user_id %>
+    <td><%= link_to "Edit this rob", edit_rob_path(rob.id) %></td>
+    <td><%= link_to link_to 'Delete this rob', rob_path(rob.id), method: :delete ,data: { confirm: 'Are you sure?' } %></td>
+   <td><%= link_to 'Post a new rob', new_rob_path %></td>
+   
+  </tr>
+  </table>
+   <% end %>
+<% end %>
+    
+
+    
+    </article>
+    
+</div>
+
+</table>
+
+
+
+
+
+

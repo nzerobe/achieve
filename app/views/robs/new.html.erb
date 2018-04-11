@@ -1,0 +1,14 @@
+<%= form_with(model: @robs, local: true) do |form| %>
+
+  <div class="blog_title">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div class="blog_title">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+   <h2>Create a new rob</h2>
+
+  <%= form.submit %>
+<% end %>

@@ -1,0 +1,17 @@
+<h1>List of contacts</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Content</th></th>
+  </tr>
+
+<% @contact.each do |contact| %>
+  <tr>
+    <td><%= contact.name %></td>
+     <td><%= contact.email %></td>
+    <td><%= contact.content %></td>
+    <td><%= link_to 'Check the details', contact_path(contact.id) %></td>
+  </tr>
+<% end %>
+</table>

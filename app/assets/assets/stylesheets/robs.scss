@@ -1,0 +1,161 @@
+html {
+  height: 100%;
+  font-size: 62.5%;
+}
+body{
+  height: 100%;
+}
+.container{
+  width: 980px;
+  margin: 0 auto;
+  position: relative;
+  min-height: 100%;
+}
+
+.footer{
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  background-color: #4D4D4D;
+  display: table;
+}
+
+
+
+.image_area{
+  width: 100%;
+}
+
+.logo_image{
+  width: 110px;
+  float: left;
+  margin: 0;
+}
+ul{
+  margin: 0;
+  padding: 0;
+}
+li{
+  list-style: none;
+}
+.top_menu li{
+  float: right;
+ /*padding: 15px;*/
+  width: auto;
+
+}
+.clearfix:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.top_menu li a{
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 15px;
+}
+.top_menu li a:hover{
+  text-decoration: underline;
+}
+.side_menu{
+  width: 300px;
+  float: left;
+}
+
+.wrapper{
+  margin-top: 10px;
+  padding-bottom: 100px;
+}
+.side_menu li{
+  background-color: #F5B4B3;
+  height: 6rem;
+  margin-bottom: 10px;
+}
+.side_menu li a{
+  font-size:2rem;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 2rem;
+  }
+  .side_menu li:hover{
+  	opacity: 0.5;
+
+  }
+
+.content{
+  width: 660px;
+  float: left;
+  font-size: 1.5rem;
+  margin-left: 0px;
+  
+}
+
+
+.side_menu .point{
+  background-color: #FCECEC;
+}
+.side_menu .point a{
+  color: #4D4D4D;
+}
+.info{
+width:480px;  
+margin-left:0px;
+float:right;
+
+}
+.info2{width:480px; 
+margin-left:0px;
+float:right;
+  
+  
+}
+.info3{width:480px;
+margin-left:0px;
+float:right;
+  
+}
+
+.info4{
+  margin-left: 300px;
+  color: #006400;
+  
+}
+.info4:hover{
+  opacity: 0.5;
+}
+
+li{
+    list-style:none;
+}
+ul{
+    padding:0;
+}
+
+.header{
+    font-size:20px;
+    font-weight:bold;
+    text-align:center;
+}
+
+.menu{
+    background-color:#012F4B;
+    color:#fff;
+}
+.menu li {
+    padding:5% 10%;
+    text-align:center;
+}
+.contents li{
+    background-color:#F3A7AB;
+    color:#fff;
+    padding:10% 10%;
+    box-sizing: border-box;
+    border: solid 1px #fff;
+}
+.topic li{
+    margin:1%;
+    border-bottom: dotted 1px #333333;
+}

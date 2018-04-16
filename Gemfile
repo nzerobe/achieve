@@ -62,4 +62,4 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'rest-client', '~> 2.0', '>= 2.0.2'
 require 'rubygems'
-
+gem 'sendgrid-ruby'

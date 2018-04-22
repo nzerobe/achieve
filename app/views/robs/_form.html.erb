@@ -19,16 +19,10 @@
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
+  
   <%= form.submit %>
 <% end %>
 
-<div class="field">
-  <%= form.label :image %>
-  <%= form.file_field :image, id: :feed_image %>
-  <%= form.hidden_field :image_cache %>
-</div>
-<%= form.label :image %>
-<%= form.file_field :image, id: :feed_image %>
-<%= form.hidden_field :image_cache %>
+
 
 <%= link_to "Return to List of robs screen", robs_path %>

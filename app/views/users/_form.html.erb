@@ -11,10 +11,13 @@
     </div>
   <% end %>
   <%= form_with(model: @user, local: true) do |f| %>  
-<div class="field">
-  <%= f.label :Profile image %>
-  <%= f.file_field :image, id: :feed_image %>
-  <%= f.hidden_field :image_cache %>
-</div>
+<p id="notice"><%= notice %></p>
+<p>
+  
+  <strong>Profile picture:</strong>
+  <%= image_tag @user.image_url %>
+  
+</p>
+
 
 <% end %>

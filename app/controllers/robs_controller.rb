@@ -63,7 +63,7 @@ class RobsController < ApplicationController
   private
   #Before_action : Set_rob, only: [:show, :edit, :update, :destroy] 
    def rob_params
-    params.require(:rob).permit(:title, :content)
+    params.require(:rob).permit(:title, :content, :image)
    end
   
   def set_rob

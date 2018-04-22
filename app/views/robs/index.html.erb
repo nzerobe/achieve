@@ -14,6 +14,7 @@
   <tr>
     <td><%= rob.title %></td>
     <td><%= rob.content %></td>
+  
     <td><%= link_to 'Check the details', rob_path(rob.id) %></td>
      <% if current_user.id == rob.user_id %>
     <td><%= link_to "Edit this rob", edit_rob_path(rob.id) %></td>

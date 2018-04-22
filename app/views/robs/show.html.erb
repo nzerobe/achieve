@@ -1,6 +1,16 @@
 <h1>Rob Detail Screen </h1>
+<p id="notice"><%= notice %></p>
 <p>Title: <%= @robs.title %></p>
 <p>Contents: <%= @robs.content %></p>
+<p>Image: <%= @robs.image %></p>
+
+
+<p>
+  
+  <strong>Image:</strong>
+  <%= image_tag @robs.image_url %>
+  
+</p>
 
 
 

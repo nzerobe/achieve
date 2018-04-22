@@ -16,18 +16,16 @@
     
     
     <% if logged_in? %>
-    <% @user = current_user %>
+    
+            <%= link_to "Profile", user_path(current_user.id) %>
+      <%= link_to "Home", robs_path %>
+      <%= link_to "Logout", session_path(current_user.id), method: :delete %>
+      <% @user = current_user %>
        <div class="image_url">
          <p id="notice"><%= notice %></p>
          <strong>Profile picture:</strong>
          <%= image_tag(@user.image.url) %>
        </div>
-      
-      
-            <%= link_to "Profile", user_path(current_user.id) %>
-      <%= link_to "Home", robs_path %>
-      <%= link_to "Logout", session_path(current_user.id), method: :delete %>
-      
     <% else %>
       <%= link_to "Sign up", new_user_path %>
       <%= link_to "Login", new_session_path %>

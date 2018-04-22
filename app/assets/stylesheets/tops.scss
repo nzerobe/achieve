@@ -38,7 +38,7 @@ footer {
   margin: auto;
   padding-bottom: 5px;
   font-size: 12px;
-  display: table;
+  position: fixed;
   bottom: 0;
 }
 
@@ -50,4 +50,16 @@ html {
 body {
   text-align: center;
   background-color: #87ceeb;
+}
+.notice{
+   width: 150px;
+  height: 150px;
+    display: inline-block;
+    border-radius: 50%;
+}
+.Profile picture{
+  width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 50%;
 }

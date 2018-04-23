@@ -42,15 +42,8 @@ body {
   text-align: center;
   background-color: #87ceeb;
   position: relative;
+  overflow: auto;
 }
 #wrap {
   min-height: 100%;
-}
-body:before {
-  content: "";
-  height: 100%;
-  float: left;
-  width: 0;
-  margin-top: -32767px;
-  /* thank you Erik J - negate effect of float*/
 }

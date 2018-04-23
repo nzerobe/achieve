@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <head>
+   <div id="header">
     <title>Blog</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  </head>
+  </div>
 
-  <body>
+   <div id="body">
     
      <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
@@ -34,8 +34,9 @@
   
 <%= yield %>
 
-
-  <footer>
+</div>
+   <div id="footer">
     <p>DIVE INTO CODE</p>
     <p>© 2015-2016 Copyright DIVE INTO CODE Corp.</p>
-  </footer>
+  </div>
+

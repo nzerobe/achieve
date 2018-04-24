@@ -2,9 +2,12 @@
 
 <p>email address: <%= @user.email %></p>
 
-
+ <% user = current_user %>
+   <%= link_to 'Check the details', user_path %>
+   <%= link_to "Edit this rob", edit_user_path %>
+   <%= link_to 'Post a new rob', new_rob_path%>
     
-    <div class="content container">
+    <div class="container">
 <h3>Here are the favored robs list</h3>
 <table class="table">
 <tr>
@@ -24,13 +27,11 @@
 </table>
 </div>
     
-  <% user = current_user %>
-   <%= link_to 'Check the details', user_path %>
-   <%= link_to "Edit this rob", edit_user_path %>
+ 
   
   </tr>
  
-<%= link_to 'Post a new rob', new_rob_path%>
+
 
     
 

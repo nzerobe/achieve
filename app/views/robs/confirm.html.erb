@@ -3,21 +3,15 @@
 <h3>Comfirm</h3>
 
 
-<%= form_with(model: @robs, url: robs_path, local: true) do |form| %>
+<%= form_with(model: @rob, url: robs_path, local: true) do |form| %>
      <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
-   <%= form.hidden_field :image %>
 
-  <p>Title:<%= @blog.title %></p>
-  <p>Body:<%= @blog.content %></p>
-   <p>Body:<%= @blog.image %></p>
+  <p>Title:<%= @rob.title %></p>
+  <p>Body:<%= @rob.content %></p>
+   <p>Body:<%= image_tag(@rob.image.url(:thumb)) %></p>
+   <%= hidden_field_tag :"cache[image]",@rob.image.cache_name%>
   <%= form.submit  "submit" %>
-<% end %>
-
-<%= link_to 'back', :back %>
-  <p>Image: <%= image_tag(@rob.image.url) %></p>
-  <%= hidden_field_tag :"cache[image]",@rob.image.cache_name%>
-  <%= form.submit  "submit"%>
 <% end %>
 
 <%= form_with(model: @rob, url: new_rob_path, local: true, method: 'get') do |form| %>
@@ -25,10 +19,6 @@
   <%= form.hidden_field :content %>
   <%= form.hidden_field :image %>
 
-  <p>Title:<%= @rob.title %></p>
-  <p>Body:<%= @rob.content %></p>>
-   <p>Body:<%= image_tag(@rob.image.url) %></p>
-  <%= form.submit  "submit" %>-->
   <%= form.submit "Back", name: 'back' %>
 <% end %>
 

@@ -28,12 +28,12 @@ class RobsController < ApplicationController
   def create
     @rob = Rob.new(rob_params)
     @rob.image.retrieve_from_cache! params[:cache][:image] 
-    @rob.user_id = current_user.id
+    # @rob.user_id = current_user.id
     
     if @rob.save
       # Switch to the list screen and display a message saying "You have created new blog!"
       RobMailer.rob_mail(@rob).deliver
-      redirect_to rob_path, Notice: "You have created new rob!"
+      redirect_to robs_path, Notice: "You have created new rob!"
     else
       # Redraw the input form.
       render 'new'
@@ -41,7 +41,7 @@ class RobsController < ApplicationController
   end
    def confirm
     @rob = Rob.new(rob_params)
-     render 'new'
+     render :new if @rob.invalid?
    end
   
   def show
@@ -64,7 +64,7 @@ class RobsController < ApplicationController
    end
   
   def destroy
-    @robs.destroy
+    @rob.destroy
     redirect_to robs_path, Notice: "You have deleted the rob!"
   end
   
@@ -74,7 +74,7 @@ class RobsController < ApplicationController
   private
   #Before_action : Set_rob, only: [:show, :edit, :update, :destroy] 
    def rob_params
-    params.require(:rob).permit(:title, :content, :image, :image_cache)
+    params.require(:rob).permit(:title, :content, :image).merge(user: current_user)
    end
   
   def set_rob

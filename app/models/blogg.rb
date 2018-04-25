@@ -1,2 +1,0 @@
-class Blogg < ApplicationRecord
-end

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'robs/index'
 
   post 'robs/new'
-  resources :robs
+  # resources :robs
   #post 'destroy/index'
   #post 'robs/new'
   resources :feeds, only: [:show, :edit, :update, :destroy]
@@ -23,6 +23,6 @@ Rails.application.routes.draw do
     collection do
       post :confirm
     end
-end
+   end
 end  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

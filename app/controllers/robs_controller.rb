@@ -13,10 +13,7 @@ class RobsController < ApplicationController
   end
 
   # Add
-   def confirm
-    @rob = Rob.new(rob_params)
-     render new_rob_path
-   end
+  
   
   def new
     if params[:back]
@@ -42,6 +39,10 @@ class RobsController < ApplicationController
       render 'new'
     end
   end
+   def confirm
+    @rob = Rob.new(rob_params)
+     render 'new'
+   end
   
   def show
     # 追記する
@@ -77,7 +78,7 @@ class RobsController < ApplicationController
    end
   
   def set_rob
-    @robs = Rob.find(params[:id])
+    @rob = Rob.find(params[:id])
   end
   #def destroy
    # @robs.destroy

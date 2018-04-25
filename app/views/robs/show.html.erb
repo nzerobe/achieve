@@ -1,4 +1,13 @@
 <h1>Rob Detail Screen </h1>
+
+<% unless @robs.user_id == current_user.id %>
+  <% if @favorite.present? %>
+    <%= link_to 'Cancel favorites', favorite_path(@robs.id), method: :delete, class: 'btn btn-danger' %>
+  <% else %>
+    <%= link_to 'To favorite', favorites_path(rob_id: @robs.id), method: :post, class: 'btn btn-prymary' %>
+  <% end %>
+<% end %>
+
 <p id="notice"><%= notice %></p>
 <p>Title: <%= @robs.title %></p>
 <p>Contents: <%= @robs.content %></p>
@@ -14,10 +23,3 @@
 
 
 
-<% unless @robs.user_id == current_user.id %>
-  <% if @favorite.present? %>
-    <%= link_to 'Cancel favorites', favorite_path(@robs.id), method: :delete, class: 'btn btn-danger' %>
-  <% else %>
-    <%= link_to 'To favorite', favorites_path(rob_id: @robs.id), method: :post, class: 'btn btn-prymary' %>
-  <% end %>
-<% end %>

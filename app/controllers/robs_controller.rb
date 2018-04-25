@@ -13,20 +13,30 @@ class RobsController < ApplicationController
   end
 
   # Add
+   def confirm
+    @rob = Rob.new(rob_params)
+     render new_rob_path
+   end
+  
   def new
-  @robs = Rob.new
-  @robs.user_id = current_user.id
-  
-  
+    if params[:back]
+      @rob = Rob.new(rob_params)
+    else
+       @rob = Rob.new    
+    end
+  # @robs = Rob.new
+  # @robs.user_id = current_user.id
   end
+  
   def create
-    @robs = Rob.new(rob_params)
-    @robs.user_id = current_user.id
+    @rob = Rob.new(rob_params)
+    @rob.image.retrieve_from_cache! params[:cache][:image] 
+    @rob.user_id = current_user.id
     
-    if @robs.save
+    if @rob.save
       # Switch to the list screen and display a message saying "You have created new blog!"
-      RobMailer.rob_mail(@robs).deliver
-      redirect_to robs_path, Notice: "You have created new rob!"
+      RobMailer.rob_mail(@rob).deliver
+      redirect_to rob_path, Notice: "You have created new rob!"
     else
       # Redraw the input form.
       render 'new'
@@ -58,12 +68,12 @@ class RobsController < ApplicationController
   end
   
   
-
+ 
   #Omitted
   private
   #Before_action : Set_rob, only: [:show, :edit, :update, :destroy] 
    def rob_params
-    params.require(:rob).permit(:title, :content, :image)
+    params.require(:rob).permit(:title, :content, :image, :image_cache)
    end
   
   def set_rob
